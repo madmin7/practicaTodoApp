@@ -15,25 +15,26 @@ export const TodoApp = () => {
         <>
             <h1>TodoApp</h1>
             <hr />
+            <div className="container">
+                <div className="row">
 
-            <div className="row">
+                    <div className="col-7">
 
-                <div className="col-7">
+                        <TodoList  
+                            todos={ todos }
+                            onDeleteTodo={ handleDelete }
+                            onToggleTodo={ handleToggleTodo }
+                        />
 
-                    <TodoList  
-                        todos={ todos }
-                        onDeleteTodo={ handleDelete }
-                        onToggleTodo={ handleToggleTodo }
-                    />
+                    </div>
+
+                    <div className="col-5">
+                        <TodoAdd 
+                            onNewTodo={ (todo) => handleNewTodo(todo) }
+                        />
+                    </div>
 
                 </div>
-
-                <div className="col-5">
-                    <TodoAdd 
-                        onNewTodo={ (todo) => handleNewTodo(todo) }
-                    />
-                </div>
-
             </div>
 
         </>
